@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs - Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(77, 166, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 4000; /* corrigido */
+}
+
+.logo img {
+    height: 45px;
+    max-width: 150px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 5000; /* corrigido */
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 3000;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: #3399ff;
+}
+
+.menu.open {
+    right: 0;
+}
+
+/* CONTENT */
+.section {
+    margin-top: 90px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* FAQ */
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    background: #f0f8ff;
+}
+
+.faq-question {
+    font-weight: bold;
+    color: #003366;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background: #4da6ff;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin-top: 40px;
+}
+
+.social a {
+    margin: 0 15px;
+    font-size: 26px;
+    color: white;
+}
+
+.social a:hover {
+    color: #003366;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="_images/4.png" alt="Logo">
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="menu" id="menu">
+    <a href="index.html" onclick="toggleMenu()">Página Inicial</a>
+    <a href="quemsomos.htm" onclick="toggleMenu()">Quem Somos</a>
+    <a href="horario.htm" onclick="toggleMenu()">Horários</a>
+    <a href="contactos.htm" onclick="toggleMenu()">Contactos</a>
+    <a href="faqs.htm" onclick="toggleMenu()">FAQs</a>
+    <a href="fotografias.htm" onclick="toggleMenu()">Fotografias</a>
+</nav>
+
+<div class="section">
+
+    <h1>Perguntas Frequentes</h1>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">O áshrama de Santo António do Cavaleiros têm parcerias com alguma entidade?</div>
+        <div class="faq-answer">
+O áshrama de Santo António do Cavaleiros faz parcerias com Escolas, Empresas, Entidades Locais e Regionais. Contacte-nos para saber mais. 
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">O que é o Yoga Samkhya?</div>
+        <div class="faq-answer">
+O mais Poderoso, Completo e Antigo
+(mais de 6.000 anos)
+Método de Desenvolvimento Humano do Planeta.
+
+
+O Yoga Primordial , com mais de 6.000 anos (quando havia apenas – Um Yoga, nos primórdios o Yoga chamava-se Sámkhya - sem as perdas de potência e sem simplificações modernas), preservado nos últimos milénios nos Himalaias da Índia, e com vestígios mais antigos no Vale do Hindu, ensinado por Shiva / Rudra / Manu (supõe-se que remonte a entre 9.500 a 11.500 anos, de acordo com as recentes descobertas sub-aquáticas do Golfo de Cambaia, da mítica Cidade de Duarka, vítima dos degelos e inundações da 2ª fase do final da Idade do Gelo),
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Nunca pratiquei Yoga qual o horário que devo escolher?</div>
+        <div class="faq-answer">
+            Pode praticar em qualquer dos horários. Na mesma aula o professor ministra diferentes níveis para a mesma técnica. Deve escolher o horário que seja mais agradável para si.
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Qual é o preço da mensalidade e o preço da inscrição?</div>
+        <div class="faq-answer">
+            A informação sobre os valores dos donativos é ministrada exclusivamente no nosso Áshrama. Temos condições especiais de adesão.
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Não tenho flexibilidade isso é um problema?</div>
+        <div class="faq-answer">
+            O Yoga melhora a flexibilidade, a postura e a mobilidade – a maioria dos praticantes de Yoga não nasceram com super flexibilidade, todos nós fomos melhorando gradualmente mediante a nossa prática regular.
+        </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Preciso de levar tapete do yoga e algum material?</div>
+        <div class="faq-answer">
+           Não é necessário trazer tapete pois a nossa sala de aula é forrada com tatami, indicado para a prática do yoga. Apenas aconselhamos os alunos a trazerem roupa confortavêl.
+        </div>
+    </div>
+ <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Onde posso saber mais informações sobre esta prática, ou quem é o mestre da instituição?</div>
+        <div class="faq-answer">
+            Para mais informações sobre a prática do Yoga e sobre o nosso mestre, consulte a página da Confederação Portuguesa do Yoga https://www.yoga-samkhya.pt/?content_id=24.
+        </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Quando e onde se celebra o dia mundial do yoga?</div>
+        <div class="faq-answer">
+            O Dia Mundial do Yoga é celebrado anualmente a 21 de junho. O nosso Áshrama participa ativamente nas celebrações, promovendo eventos especiais e aulas abertas.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Centro do Yoga</p>
+
+    <div class="social">
+        <a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
+
+function toggleFaq(element) {
+    const answer = element.querySelector(".faq-answer");
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

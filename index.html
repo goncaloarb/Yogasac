@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* 🔥 adiciona isto */
+    background: rgba(77,166,255,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 🔥 e isto */
+    padding: 10px 15px;
+    z-index: 4000;
+}
+
+.logo img {
+    height: 45px;
+    max-width: 150px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 5000; /* corrigido */
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+}
+
+.menu.open { right: 0; }
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* SLIDER */
+.slider { margin-top: 70px; height: 400px; overflow: hidden; }
+.slides { display: flex; width: 300%; animation: slide 15s infinite; }
+.slides img { width: 100%; height: 400px; object-fit: cover; }
+
+@keyframes slide {
+0%,30%{margin-left:0;}
+35%,65%{margin-left:-100%;}
+70%,100%{margin-left:-200%;}
+}
+
+/* TITULO */
+.content {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.content h1 {
+    color: #003366;
+}
+
+/* SOBRE ASHRAMA */
+.sobre-ashrama {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.sobre-ashrama .texto {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.sobre-ashrama p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.sobre-ashrama .imagens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.sobre-ashrama img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* APRESENTAÇÃO */
+.apresentacao {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.apresentacao h2 {
+    color: #003366;
+}
+
+.apresentacao p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* BOTÃO */
+.apresentacao .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #4da6ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.apresentacao .btn:hover {
+    background: #3399ff;
+}
+
+/* AULAS */
+.classes-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.classes-section h2 {
+    color: #003366;
+}
+
+.classes-section p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.classes {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.class-box {
+    height: 220px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    background-size: cover;
+    position: relative;
+    transition: 0.3s;
+}
+
+.class-box:hover {
+    transform: scale(1.05);
+}
+
+.class-box::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+}
+
+.class-box span {
+    position: relative;
+    z-index:2;
+}
+
+/* PROFESSORES */
+.teachers {
+    text-align:center;
+    padding:40px;
+}
+
+.teacher-list {
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.teacher img {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+}
+
+/* TESTEMUNHOS */
+.testemunhos {
+    text-align:center;
+    padding:40px;
+}
+
+.comentarios {
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.comentario {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+footer {
+    background:#4da6ff;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.social a {
+    margin:10px;
+    font-size:24px;
+    color:white;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:26px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.classes { grid-template-columns:1fr 1fr; }
+
+.sobre-ashrama .imagens {
+    grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo"><img src="_images/4.png"></div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="menu" id="menu">
+<a href="index.html" onclick="toggleMenu()">Página Inicial</a>
+<a href="quemsomos.htm" onclick="toggleMenu()">Quem Somos</a>
+<a href="horario.htm" onclick="toggleMenu()">Horários</a>
+<a href="contactos.htm" onclick="toggleMenu()">Contactos</a>
+<a href="faqs.htm" onclick="toggleMenu()">FAQs</a>
+<a href="fotografias.htm" onclick="toggleMenu()">Fotografias</a>
+</nav>
+
+<!-- SLIDER -->
+<div class="slider">
+<div class="slides">
+<img src="_images/slider/1.jpg">
+<img src="_images/slider/2.jpg">
+<img src="_images/slider/3.jpg">
+</div>
+</div>
+
+<!-- TITULO -->
+<div class="content">
+<h1>Bem-vindo ao Áshrama Santo António Cavaleiros</h1>
+</div>
+
+<!-- SOBRE -->
+<div class="sobre-ashrama">
+
+<div class="texto">
+<p>
+O Áshrama de Santo António dos Cavaleiros - Centro do yoga dedica-se exclusivamente à divulgação e ensino do Yoga Primordial - o Yoga Sámkhya - com mais de 6000 anos de existência, multifacetado e completo.
+</p>
+
+<p>
+O Áshrama está presente anualmente na celebração do Dia Mundial do Yoga, promovido pela Confederação Portuguesa do Yoga.
+</p>
+
+<p>
+Um dia dedicado ao desenvolvimento humano, promovendo a consciência do corpo, mente e emoções, bem como a saúde integral e longevidade.
+</p>
+</div>
+
+<div class="imagens">
+<img src="_images/centro/2.jpg">
+<img src="_images/centro/3.jpg">
+</div>
+
+</div>
+
+<!-- APRESENTAÇÃO -->
+<div class="apresentacao">
+<h2>Encontre o seu equilíbrio</h2>
+<p>Um espaço dedicado ao bem-estar e à prática do Yoga.</p>
+<a href="contactos.htm" class="btn">Fale Connosco</a>
+</div>
+
+<!-- AULAS -->
+<div class="classes-section">
+<h2>As Nossas Aulas</h2>
+<p>Temos várias opções de aulas para todas as idades e níveis de experiência. Estamos preparados para adaptar as aulas às necessidades de cada aluno.</p>
+<p></p>
+
+<div class="classes">
+<a href="adultos.htm" class="class-box" style="background-image:url('_images/fotografias/adultos.jpg');"><span>Adultos</span></a>
+<a href="idosos.htm" class="class-box" style="background-image:url('_images/fotografias/idosos.jpg');"><span>Seniores</span></a>
+<a href="criancas.htm" class="class-box" style="background-image:url('_images/fotografias/criancas.jpg');"><span>Crianças</span></a>
+<a href="online.htm" class="class-box" style="background-image:url('_images/fotografias/zoom.jpg');"><span>Online</span></a>
+</div>
+</div>
+
+<!-- PROFESSORES -->
+<div class="teachers">
+<h2>Os Nossos Professores</h2>
+<div class="teacher-list">
+<div class="teacher"><img src="_images/professores/1.jpg"><p>Regina Marques</p></div>
+<div class="teacher"><img src="_images/professores/2.jpg"><p>Inês Xavier</p></div>
+<div class="teacher"><img src="_images/professores/3.jpg"><p>Gonçalo Brás</p></div>
+</div>
+</div>
+
+<!-- TESTEMUNHOS -->
+<div class="testemunhos">
+<h2>O que dizem os nossos alunos</h2>
+<div class="comentarios">
+<div class="comentario"><p>"Um local com gente boa, genuína e que faz tudo com muita dedicação e amor. Descobrir este espaço e esta professora fez-me ver que o Ioga fará sempre parte da minha vida! Recomendo muito!!!"</p><strong>Sílvia Sousa - Google Reviews</strong></div>
+<div class="comentario"><p>"Um ambiente tranquilo com muita luminosidade e boa disposição, a Regina é uma professora fantástica e que nos estimula a evoluir de dia para dia e a professora Inês é maravilhosa com as crianças, as minhas filhas adoram na e a evolução nota se a olhos vistos. Recomendo a 100%."</p><strong>Claudia Calixto - Google Reviews</strong></div>
+<div class="comentario"><p>"Á muitos anos que pratico yoga com as professoras Regina Marques e Inês Xavier e só tenho a dizer que foi das melhores coisas que decidi praticar, um grande beijinho para elas."</p><strong>Ricardo Carvalho - Google Reviews</strong></div>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Centro do Yoga</p>
+<div class="social">
+<a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+
+<a href="https://wa.me/351929331180" target="_blank" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aulas Online - Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(77,166,255,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 4000;
+}
+
+.logo img { height: 45px; }
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: 0.3s;
+}
+
+.menu.open { right: 0; }
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* MAIN */
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 90px auto 0;
+    flex: 1;
+}
+
+.about {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* SLIDER */
+.slider {
+    position: relative;
+    width: 50%;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* CORRIGIDOS */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* SETAS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* TEXT */
+.about-text {
+    width: 50%;
+}
+
+.about-text h1 {
+    color: #003366;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+/* FOOTER */
+footer {
+    background: #4da6ff;
+    text-align: center;
+    padding: 25px;
+    color: white;
+}
+
+.social a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.about { flex-direction: column; }
+
+.slider, .about-text {
+    width: 100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo"><img src="_images/4.png"></div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="menu" id="menu">
+<a href="index.html">Página Inicial</a>
+<a href="quemsomos.htm">Quem Somos</a>
+<a href="horario.htm">Horários</a>
+<a href="contactos.htm">Contactos</a>
+<a href="faqs.htm">FAQs</a>
+<a href="fotografias.htm">Fotografias</a>
+</nav>
+
+<div class="section">
+<div class="about">
+
+<!-- SLIDER -->
+<div class="slider">
+<div class="arrow prev" onclick="prevSlide()">❮</div>
+<div class="arrow next" onclick="nextSlide()">❯</div>
+
+<img src="_images/online/1.jpg" class="slide active">
+<img src="_images/adultos/2.jpg" class="slide">
+<img src="_images/adultos/3.jpg" class="slide">
+</div>
+
+<!-- TEXTO -->
+        <div class="about-text">
+            <h1>Aulas Yoga online</h1>
+
+            <p>
+                YOGA SÁMKHYA - o mais Poderoso, Completo, Sábio e Antigo (mais de 6.000 anos) Método de Desenvolvimento Humano do Planeta.
+            </p>
+
+            <p>
+                Aos Adultos e aos Jovens Universitários, o Yoga Sámkhya promove a saúde - é profiláctico - confere uma musculatura, e uma flexibilidade excepcionais, e uma boa forma e resistência invulgar, proporciona um elevado controlo gravítico e do movimento, fortalece uma coluna vertebral ergonómica, mantém um peso saudável, e uma silhueta adequada, acentua o peristaltismo, e a circulação de retorno, e estimula a acuidade visual, uns pulmões saudáveis, e a força da vontade, e desenvolve a capacidade de captar, aumentar e utilizar a energia de forma fulgurante, permitindo rapidíssimas recuperações físicas.
+            </p>
+
+            <p>
+                O Yoga Sámkhya combate fortemente o stress, proporciona um sono biológico nocturno da máxima qualidade, fortalece o sistema imunitário, estimula exponencialmente o aparelho endócrino, mantendo um constante pico hormonal de juventude, e a sensação de auto confiança e felicidade, evita depressões, fomenta o romper da solidão, ensina a manter um emocional positivo e altamente criativo, e recoloca o praticante na situação Natural semelhante à experimentada pós férias – retemperado e vigoroso.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+<p>© 2026 Centro do Yoga</p>
+<div class="social">
+<a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+}
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(){
+slides.forEach(s => s.style.display = "none");
+slides[index].style.display = "block";
+}
+
+function nextSlide(){
+index++;
+if(index >= slides.length) index = 0;
+showSlide();
+}
+
+function prevSlide(){
+index--;
+if(index < 0) index = slides.length - 1;
+showSlide();
+}
+
+/* iniciar slideshow */
+showSlide();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotografias - Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* corrigido */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(77, 166, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 4000;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 3000;
+}
+
+.menu.open {
+    right: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MAIN */
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 90px auto 0;
+
+    flex: 1; /* corrigido */
+}
+
+.about {
+    display: flex;
+    align-items: flex-start; /* corrigido */
+    gap: 40px;
+}
+
+/* SLIDER */
+.slider {
+    position: relative;
+    width: 50%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* SETAS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* TEXTO */
+.about-text {
+    width: 50%;
+}
+
+.about-text h1 {
+    color: #003366;
+    margin-top: 0; /* corrigido */
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    background: #4da6ff;
+    text-align: center;
+    padding: 25px;
+    color: white;
+}
+
+.social a {
+    margin: 0 15px;
+    font-size: 26px;
+    color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .slider,
+    .about-text {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="_images/4.png">
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="menu" id="menu">
+    <a href="index.html">Página Inicial</a>
+    <a href="quemsomos.htm">Quem Somos</a>
+    <a href="horario.htm">Horários</a>
+    <a href="contactos.htm">Contactos</a>
+    <a href="faqs.htm">FAQs</a>
+    <a href="fotografias.htm">Fotografias</a>
+</nav>
+
+<div class="section">
+    <div class="about">
+
+        <!-- SLIDER -->
+        <div class="slider">
+            <div class="arrow prev" onclick="prevSlide()">❮</div>
+            <div class="arrow next" onclick="nextSlide()">❯</div>
+
+            <img src="_images/fotografias/1.jpg" class="slide active">
+            <img src="_images/fotografias/2.jpg" class="slide">
+            <img src="_images/fotografias/3.jpg" class="slide">
+            <img src="_images/fotografias/4.jpg" class="slide">
+            <img src="_images/fotografias/5.jpg" class="slide">
+            <img src="_images/fotografias/6.jpg" class="slide">
+            <img src="_images/fotografias/7.jpg" class="slide">
+            <img src="_images/fotografias/8.jpg" class="slide">
+            <img src="_images/fotografias/9.jpg" class="slide">
+            <img src="_images/fotografias/10.jpg" class="slide">
+            <img src="_images/fotografias/11.jpg" class="slide">
+            <img src="_images/fotografias/12.jpg" class="slide">
+            <img src="_images/fotografias/13.jpg" class="slide">
+            <img src="_images/fotografias/14.jpg" class="slide">
+            <img src="_images/fotografias/15.jpg" class="slide">
+            <img src="_images/fotografias/16.jpg" class="slide">
+            <img src="_images/fotografias/17.jpg" class="slide">
+            <img src="_images/fotografias/18.jpg" class="slide">
+            <img src="_images/fotografias/19.jpg" class="slide">
+            <img src="_images/fotografias/20.jpg" class="slide">
+            <img src="_images/fotografias/21.jpg" class="slide">
+            <img src="_images/fotografias/22.jpg" class="slide">
+            <img src="_images/fotografias/23.jpg" class="slide">
+            <img src="_images/fotografias/24.jpg" class="slide">
+            <img src="_images/fotografias/25.jpg" class="slide">
+            <img src="_images/fotografias/26.jpg" class="slide">
+            <img src="_images/fotografias/27.jpg" class="slide">
+            <img src="_images/fotografias/28.jpg" class="slide">
+            <img src="_images/fotografias/29.jpg" class="slide">
+            
+            
+
+        </div>
+
+        <!-- TEXTO -->
+        <div class="about-text">
+            <h1>Fotografias</h1>
+
+            <p>Nesta página poderá encontrar uma seleção de momentos especiais vividos no nosso ashrama ao longo dos anos.</p>
+
+            <p>Partilhamos fotografias das nossas aulas de Yoga para crianças, adultos e seniores, bem como sessões online, eventos, celebrações do Dia Internacional do Yoga e a nossa viagem à Índia.</p>
+
+            <p>Cada imagem representa mais do que um momento...é um testemunho de partilha, crescimento, alegria e conexão.</p>
+            <p>Convidamo-lo a explorar esta galeria e a sentir a energia e a vibração do nosso espaço.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Centro do Yoga</p>
+
+    <div class="social">
+        <a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+    </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    index++;
+    if (index >= slides.length) index = 0;
+    showSlide();
+}
+
+function prevSlide() {
+    index--;
+    if (index < 0) index = slides.length - 1;
+    showSlide();
+}
+</script>
+
+</body>
+</html>

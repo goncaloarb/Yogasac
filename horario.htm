@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horário - Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(77, 166, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 4000; /* corrigido */
+}
+
+.logo img {
+    height: 45px;
+    max-width: 150px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 5000; /* corrigido */
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 3000;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: #3399ff;
+}
+
+.menu.open {
+    right: 0;
+}
+
+.section {
+    text-align: center;
+}
+
+/* MAIN SECTION */
+.section {
+    margin-top: 90px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FLEX LAYOUT */
+.about {
+    display: flex;
+    justify-content: center; /* 🔥 centra horizontalmente */
+}
+
+/* IMAGE */
+.about img {
+    width: 100%;
+    max-width: 600px; /* 🔥 controla o tamanho */
+    border-radius: 10px;
+}
+
+/* TEXT */
+.about-text h1 {
+    color: #003366;
+    margin-top: 0; /* 🔥 remove espaço em cima */
+}
+
+.about-text h1 {
+    color: #003366;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    background: #4da6ff;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    margin-top: 40px;
+}
+
+.social a {
+    margin: 0 15px;
+    font-size: 26px;
+    color: white;
+}
+
+.social a:hover {
+    color: #003366;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about img,
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="_images/4.png" alt="Logo">
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- MENU -->
+<nav class="menu" id="menu">
+    <a href="index.html">Página Inicial</a>
+    <a href="quemsomos.htm">Quem Somos</a>
+    <a href="horario.htm">Horários</a>
+    <a href="contactos.htm">Contactos</a>
+    <a href="faqs.htm">FAQs</a>
+    <a href="fotografias.htm">Fotografias</a>
+</nav>
+
+<!-- CONTEÚDO -->
+<div class="section">
+    <div class="about">
+
+        <!-- IMAGEM -->
+        <img src="_images/horario/1.jpg" alt="Espaço Yoga">
+
+        
+       
+
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Centro do Yoga</p>
+
+    <div class="social">
+        <a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

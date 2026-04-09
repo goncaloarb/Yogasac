@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aulas para Crianças - Áshrama Santo António Cavaleiros</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f2ff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(77,166,255,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    z-index: 4000;
+}
+
+.logo img { height: 45px; }
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MENU */
+.menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 75%;
+    max-width: 260px;
+    height: 100%;
+    background: #4da6ff;
+    padding-top: 80px;
+    transition: 0.3s;
+}
+
+.menu.open { right: 0; }
+
+.menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* MAIN */
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 90px auto 0;
+    flex: 1;
+}
+
+.about {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* SLIDER */
+.slider {
+    position: relative;
+    width: 50%;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 🔥 SLIDES CORRIGIDOS */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* SETAS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* TEXTO */
+.about-text {
+    width: 50%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.about-text h1 {
+    color: #003366;
+}
+
+.about-text p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.about-text ul {
+    padding-left: 20px;
+}
+
+.about-text li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background: #4da6ff;
+    text-align: center;
+    padding: 25px;
+    color: white;
+}
+
+.social a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.about { flex-direction: column; }
+
+.slider, .about-text {
+    width: 100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo"><img src="_images/4.png"></div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav class="menu" id="menu">
+<a href="index.html">Página Inicial</a>
+<a href="quemsomos.htm">Quem Somos</a>
+<a href="horario.htm">Horários</a>
+<a href="contactos.htm">Contactos</a>
+<a href="faqs.htm">FAQs</a>
+<a href="fotografias.htm">Fotografias</a>
+</nav>
+
+<div class="section">
+<div class="about">
+
+<!-- SLIDER -->
+<div class="slider">
+<div class="arrow prev" onclick="prevSlide()">❮</div>
+<div class="arrow next" onclick="nextSlide()">❯</div>
+
+<img src="_images/criancas/1.jpg" class="slide active">
+<img src="_images/criancas/2.jpg" class="slide">
+<img src="_images/criancas/3.jpg" class="slide">
+</div>
+
+<!-- TEXTO -->
+<div class="about-text">
+
+<h1>Aulas para Crianças</h1>
+
+<p>
+Entre as inúmeras vantagens que advêm à criança com a prática do Yoga, destaca-se:
+</p>
+
+<ul>
+<li>Preservar e manter a flexibilidade, pureza, imaginação, criatividade e capacidade de aprendizagem</li>
+<li>Aumentar a capacidade de concentração</li>
+<li>Adoptar um correcto posicionamento da coluna vertebral</li>
+<li>Promover um crescimento saudável</li>
+<li>Conferir uma forte base ética e moral</li>
+<li>Potenciar o respeito pelo próximo</li>
+<li>Melhorar a auto-estima e a auto-confiança</li>
+<li>Aprender formas positivas de interacção social</li>
+<li>Potenciar a capacidade de focalização</li>
+<li>Aumentar a coordenação motora</li>
+<li>Aumentar a consciência corporal</li>
+<li>Proporcionar equilíbrio emocional</li>
+<li>Fortalecer o sistema nervoso</li>
+<li>Preparar para a adolescência</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>© 2026 Centro do Yoga</p>
+<div class="social">
+<a href="https://www.instagram.com/_yogasac?igsh=MWl5MTQ0Zzhsem5qOQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/share/18Uu1TF6LY/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@shrama.sac4?_r=1&_t=ZG-95N1BxDLaIj"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+}
+
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(){
+slides.forEach(s => s.style.display = "none");
+slides[index].style.display = "block";
+}
+
+function nextSlide(){
+index++;
+if(index >= slides.length) index = 0;
+showSlide();
+}
+
+function prevSlide(){
+index--;
+if(index < 0) index = slides.length - 1;
+showSlide();
+}
+
+/* iniciar slideshow */
+showSlide();
+</script>
+
+</body>
+</html>
